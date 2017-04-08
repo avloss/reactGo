@@ -2,23 +2,25 @@
  * Routes for express app
  */
 import passport from 'passport';
-import unsupportedMessage from '../db/unsupportedMessage';
+// import unsupportedMessage from '../db/unsupportedMessage';
 import { controllers, passport as passportConfig } from '../db';
 
-const usersController = controllers && controllers.users;
-const topicsController = controllers && controllers.topics;
+// const usersController = controllers && controllers.users;
+const usersController = controllers.users;
+// const topicsController = controllers && controllers.topics;
+const topicsController = controllers.topics;
 
 export default (app) => {
   // user routes
-  if (usersController) {
+  // if (usersController) {
     app.post('/login', usersController.login);
     app.post('/signup', usersController.signUp);
     app.post('/logout', usersController.logout);
-  } else {
-    console.warn(unsupportedMessage('users routes'));
-  }
+  // } else {
+  //   console.warn(unsupportedMessage('users routes'));
+  // }
 
-  if (passportConfig && passportConfig.google) {
+  // if (passportConfig && passportConfig.google) {
     // google auth
     // Redirect the user to Google for authentication. When complete, Google
     // will redirect the user back to the application at
@@ -41,15 +43,15 @@ export default (app) => {
         failureRedirect: '/login'
       })
     );
-  }
+  // }
 
   // topic routes
-  if (topicsController) {
+  // if (topicsController) {
     app.get('/topic', topicsController.all);
     app.post('/topic/:id', topicsController.add);
     app.put('/topic/:id', topicsController.update);
     app.delete('/topic/:id', topicsController.remove);
-  } else {
-    console.warn(unsupportedMessage('topics routes'));
-  }
+  // } else {
+  //   console.warn(unsupportedMessage('topics routes'));
+  // }
 };
