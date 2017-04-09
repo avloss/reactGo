@@ -16,6 +16,13 @@ const app = express();
  */
 connect();
 
+/* avloss
+adding dummy instructors
+ */
+import addDummyInstructors from './dummyData/addDummyInstructors'
+addDummyInstructors()
+
+
 /*
  * REMOVE if you do not need passport configuration
  */
