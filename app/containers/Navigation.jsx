@@ -25,6 +25,9 @@ const Navigation = ({ user, logOut }) => {
               { user.authenticated ? (
         <Link to="/profile" className={cx('item')} activeClassName={cx('active') }>Profile</Link>
               ):("")}
+        <Link className={cx('item')} to="/map">Map</Link>
+
+        <a className={cx('item')} href="/blog" rel="external">Blog</a>
 
       </nav>
     );
