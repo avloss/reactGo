@@ -16,6 +16,15 @@ const app = express();
  */
 connect();
 
+/* avloss
+adding dummy instructors
+ */
+import addDummyInstructors from './dummyData/addDummyInstructors'
+addDummyInstructors()
+
+
+
+
 /*
  * REMOVE if you do not need passport configuration
  */
@@ -36,6 +45,13 @@ if (isDebug) {
  * Bootstrap application settings
  */
 initExpress(app);
+
+
+/* avloss
+ starting with server pages
+ */
+import {renderBlog} from './serverPages/blog';
+renderBlog(app)
 
 /*
  * REMOVE if you do not need any routes

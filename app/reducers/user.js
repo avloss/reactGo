@@ -72,11 +72,17 @@ const authenticated = (
   }
 };
 
+//const user_details = (state={email:"xyz@abc"},action)=>{email:"xyz@abc"}
+
+const user_details = (state = {})=>state
+
+
 const userReducer = combineReducers({
   isLogin,
   isWaiting,
   authenticated,
-  message
+  message,
+  user_details
 });
 
 export default userReducer;
