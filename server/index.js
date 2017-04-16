@@ -7,6 +7,8 @@ import initExpress from './init/express';
 import initRoutes from './init/routes';
 import renderMiddleware from './render/middleware';
 
+import addSecondaryApps from '../apps/addSecondaryApps'
+
 const app = express();
 
 /*
@@ -48,10 +50,9 @@ initExpress(app);
 
 
 /* avloss
- starting with server pages
+ starting with separate apps
  */
-import {renderBlog} from './serverPages/blog';
-renderBlog(app)
+addSecondaryApps(app);
 
 /*
  * REMOVE if you do not need any routes

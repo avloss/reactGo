@@ -45,7 +45,10 @@ module.exports = (env = '') => {
   const prodBrowserRender = {
     devtool: 'cheap-module-source-map',
     context: PATHS.app,
-    entry: { app: ['./client'] },
+    entry: {
+      app: ['./client'] ,
+      instructorsFormApp: ['../apps/instructorsForm/client']
+    },
     node,
     output: {
       path: PATHS.assets,
@@ -61,7 +64,10 @@ module.exports = (env = '') => {
   const devBrowserRender = {
     devtool: 'eval',
     context: PATHS.app,
-    entry: { app: ['./client', hotMiddlewareScript] },
+    entry: {
+      app: ['./client', hotMiddlewareScript],
+      instructorsFormApp: ['../apps/instructorsForm/client', hotMiddlewareScript]
+    },
     node,
     output: {
       path: PATHS.assets,

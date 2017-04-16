@@ -9,6 +9,8 @@ const CURRENT_WORKING_DIR = process.cwd();
 
 module.exports = {
   app: path.resolve(CURRENT_WORKING_DIR, 'app'),
+  instructorsFormApp: path.resolve(CURRENT_WORKING_DIR, 'apps/instructorsForm'),
+  
   assets: path.resolve(CURRENT_WORKING_DIR, 'public', 'assets'),
   compiled: path.resolve(CURRENT_WORKING_DIR, 'compiled'),
   public: '/assets/', // use absolute path for css-loader?
