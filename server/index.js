@@ -46,13 +46,6 @@ if (isDebug) {
  */
 initExpress(app);
 
-
-/* avloss
- starting with server pages
- */
-import {renderBlog} from './serverPages/blog';
-renderBlog(app)
-
 /*
  * REMOVE if you do not need any routes
  *

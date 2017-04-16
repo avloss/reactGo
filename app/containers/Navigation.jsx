@@ -27,8 +27,6 @@ const Navigation = ({ user, logOut }) => {
               ):("")}
         <Link className={cx('item')} to="/map">Map</Link>
 
-        <a className={cx('item')} href="/blog" rel="external">Blog</a>
-
       </nav>
     );
 };
