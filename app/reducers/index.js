@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
 import user from '../reducers/user';
 import topic from '../reducers/topic';
+import masseuse from '../reducers/masseuse';
 import message from '../reducers/message';
 import * as types from '../types';
 
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
   topic,
   user,
   message,
-  routing
+  routing,
+  masseuse
 });
 
 export default rootReducer;

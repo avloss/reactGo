@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import { fetchVoteData } from './fetch-data';
+import { fetchVoteData, fetchMasseusData } from './fetch-data';
 import { App, Vote, Dashboard, About, LoginOrRegister, Profile, Map } from './pages';
 
 /*
@@ -36,7 +36,7 @@ export default (store) => {
       <Route path="dashboard" component={Dashboard} onEnter={requireAuth} />
       <Route path="about" component={About} />
       <Route path="profile" component={Profile} />
-      <Route path="map" component={Map} />
+      <Route path="map" component={Map} fetchData={fetchMasseusData}/>
     </Route>
   );
 };

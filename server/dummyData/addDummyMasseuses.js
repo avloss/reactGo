@@ -1,5 +1,5 @@
-import Instructor from '../db/models/instructors';
-const instructors = require('./instructors.json');
+import Instructor from '../db/models/masseuses';
+const instructors = require('./masseuses.json');
 
 function addDummyInstructors() {
   Instructor
@@ -13,7 +13,7 @@ function addDummyInstructors() {
           .map(v=>v.save())
       )
     )
-    .then(v=>console.log("POPULATED WITH SAMPLE INSTRUCTORS"))
+    .then(v=>console.log("POPULATED WITH SAMPLE MASSAGE PROVIDERS"))
 }
 
 export default addDummyInstructors

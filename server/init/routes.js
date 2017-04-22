@@ -10,6 +10,9 @@ const usersController = controllers.users;
 // const topicsController = controllers && controllers.topics;
 const topicsController = controllers.topics;
 
+
+const masseuseController = controllers.masseuses;
+
 export default (app) => {
   // user routes
   // if (usersController) {
@@ -47,10 +50,13 @@ export default (app) => {
 
   // topic routes
   // if (topicsController) {
-    app.get('/topic', topicsController.all);
-    app.post('/topic/:id', topicsController.add);
-    app.put('/topic/:id', topicsController.update);
-    app.delete('/topic/:id', topicsController.remove);
+  app.get('/topic', topicsController.all);
+  app.post('/topic/:id', topicsController.add);
+  app.put('/topic/:id', topicsController.update);
+  app.delete('/topic/:id', topicsController.remove);
+
+  app.get('/masseuse', masseuseController.all);
+  app.post('/masseuse/:id', masseuseController.add);
   // } else {
   //   console.warn(unsupportedMessage('topics routes'));
   // }

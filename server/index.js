@@ -19,7 +19,7 @@ connect();
 /* avloss
 adding dummy instructors
  */
-import addDummyInstructors from './dummyData/addDummyInstructors'
+import addDummyInstructors from './dummyData/addDummyMasseuses'
 addDummyInstructors()
 
 

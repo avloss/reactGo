@@ -10,17 +10,13 @@ const FloatType = Float.loadType(mongoose,20)
 var SchemaTypes = mongoose.Schema.Types;
 
 
-const TopicSchema = new mongoose.Schema({
-  cop: Boolean,
-  cpd: Boolean,
+const MasseuseSchema = new mongoose.Schema({
   name: String,
   lon: {type:FloatType},
   lat: {type:FloatType},
-  number: String,
-  observations_number: Number,
-  email: String
+  type: Number
 });
 
 // Compiles the schema into a model, opening (or creating, if
 //	nonexistent) the 'Topic' collection in the MongoDB database
-export default mongoose.model('Instructor', TopicSchema);
+export default mongoose.model('Masseuse', MasseuseSchema);
