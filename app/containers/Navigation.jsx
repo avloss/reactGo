@@ -14,19 +14,8 @@ const Navigation = ({ user, logOut }) => {
           to="/"
           className={cx('item', 'logo')}
           activeClassName={cx('active')}
-          onlyActiveOnIndex>Ninja Ocean</Link>
-              { user.authenticated ? (
-        <Link onClick={logOut} className={cx('item')} to="/">Logout</Link>
-              ) : (
-        <Link className={cx('item')} to="/login">Log in</Link>
-              )}
-        <Link className={cx('item')} to="/dashboard">Dashboard</Link>
+          onlyActiveOnIndex>Aroma</Link>
         <Link to="/about" className={cx('item')} activeClassName={cx('active')}>About</Link>
-              { user.authenticated ? (
-        <Link to="/profile" className={cx('item')} activeClassName={cx('active') }>Profile</Link>
-              ):("")}
-        <Link className={cx('item')} to="/map">Map</Link>
-
       </nav>
     );
 };
@@ -43,3 +32,27 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, { logOut }, null, {pure:false})(Navigation);
+
+
+
+/*
+ <nav className={cx('navigation')} role="navigation">
+ <Link
+ to="/"
+ className={cx('item', 'logo')}
+ activeClassName={cx('active')}
+ onlyActiveOnIndex>Aroma</Link>
+ { user.authenticated ? (
+ <Link onClick={logOut} className={cx('item')} to="/">Logout</Link>
+ ) : (
+ <Link className={cx('item')} to="/login">Log in</Link>
+ )}
+ <Link className={cx('item')} to="/dashboard">Dashboard</Link>
+ <Link to="/about" className={cx('item')} activeClassName={cx('active')}>About</Link>
+ { user.authenticated ? (
+ <Link to="/profile" className={cx('item')} activeClassName={cx('active') }>Profile</Link>
+ ):("")}
+ <Link className={cx('item')} to="/map">Map</Link>
+
+ </nav>
+ */
