@@ -1,20 +1,64 @@
 [
   {
-    "name": "Masseus 1",
+    "name": "Suda",
     "lat": 13.721813,
     "lon": 100.558533,
     "type": 0
   },
   {
-    "name": "Masseus 2",
+    "name": "Somying",
     "lat": 13.725096,
     "lon": 100.562535,
     "type": 0
   },
   {
-    "name": "Masseus 3",
+    "name": "Yupin",
     "lat": 13.710045,
     "lon": 100.560296,
     "type": 0
+  },
+  {
+    "name": "Kamolrat",
+    "lat": 13.712682,
+    "lon": 100.586698,
+    "type": 0
+  },
+  {
+    "name": "Nicha",
+    "lat": 13.720186,
+    "lon": 100.588704,
+    "type": 0
+  },
+  {
+    "name": "Yada",
+    "lat": 13.736450,
+    "lon": 100.581752,
+    "type": 0
+  },
+  {
+    "name": "Kamolmat",
+    "lat": 13.743192,
+    "lon": 100.569387,
+    "type": 0
+  },
+  {
+    "name": "Songsri",
+    "lat": 13.741667,
+    "lon": 100.560319,
+    "type": 0
+  },
+  {
+    "name": "Donya",
+    "lat": 13.735755,
+    "lon": 100.552265,
+    "type": 0
+  },
+  {
+    "name": "Somchai",
+    "lat": 13.730170,
+    "lon": 100.547568,
+    "type": 0
   }
+
 ]
+

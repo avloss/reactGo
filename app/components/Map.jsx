@@ -16,19 +16,20 @@ const greatPlaceStyle = {
   // initially any map object has left top corner at lat lng coordinates
   // it's on you to set object origin to 0,0 coordinates
   position: 'absolute',
-  width: K_WIDTH,
-  height: K_HEIGHT,
+  //width: K_WIDTH*2.5,
+  height: K_HEIGHT*0.7,
   left: -K_WIDTH / 2,
   top: -K_HEIGHT / 2,
 
-  border: '5px solid #f44336',
+  border: '2px dotted #1eb508',
   borderRadius: K_HEIGHT,
   backgroundColor: 'white',
   textAlign: 'center',
-  color: '#3f51b5',
+  color: '#545454',
   fontSize: 16,
   fontWeight: 'bold',
-  padding: 4
+  paddingLeft: 3,
+  paddingRight: 3
 };
 
 class MyGreatPlace extends Component {
@@ -44,6 +45,7 @@ class MyGreatPlace extends Component {
     return (
       <div style={greatPlaceStyle}>
         {this.props.text}
+        <div style={{color:'black'}}> * </div>
       </div>
     );
   }
