@@ -12,9 +12,13 @@ var SchemaTypes = mongoose.Schema.Types;
 
 const MasseuseSchema = new mongoose.Schema({
   name: String,
-  lon: {type:FloatType},
+  stars: Number,
   lat: {type:FloatType},
-  type: Number
+  lon: {type:FloatType},
+  picture: String,
+  number: String,
+  style: []
+
 });
 
 // Compiles the schema into a model, opening (or creating, if

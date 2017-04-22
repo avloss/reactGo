@@ -9,6 +9,8 @@ import React, {PropTypes, Component} from 'react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import GoogleMap from 'google-map-react';
 
+import {MasseusModal} from './MasseusModal';
+
 const K_WIDTH = 40;
 const K_HEIGHT = 40;
 
@@ -17,7 +19,7 @@ const greatPlaceStyle = {
   // it's on you to set object origin to 0,0 coordinates
   position: 'absolute',
   //width: K_WIDTH*2.5,
-  height: K_HEIGHT*0.7,
+  height: K_HEIGHT * 0.7,
   left: -K_WIDTH / 2,
   top: -K_HEIGHT / 2,
 
@@ -45,7 +47,7 @@ class MyGreatPlace extends Component {
     return (
       <div style={greatPlaceStyle}>
         {this.props.text}
-        <div style={{color:'black'}}> * </div>
+        <div style={{color: 'red', fontSize: 25}}> {"*".repeat(this.props.stars)}</div>
       </div>
     );
   }
@@ -55,14 +57,12 @@ class MyGreatPlace extends Component {
 export default class SimpleMapComponent extends Component {
   static propTypes = {
     center: PropTypes.array,
-    zoom: PropTypes.number,
-    greatPlaceCoords: PropTypes.any
+    zoom: PropTypes.number
   };
 
   static defaultProps = {
-    center: [13.710045, 100.560296],
-    zoom: 13,
-    greatPlaceCoords: {lat: 59.724465, lng: 30.080121}
+    center: [13.7381564, 100.560296],
+    zoom: 14
   };
 
   shouldComponentUpdate = shouldPureComponentUpdate;
@@ -72,23 +72,23 @@ export default class SimpleMapComponent extends Component {
   }
 
   render() {
-    const {masseuses}  = this.props;
+    const {masseuses} = this.props;
     //console.log(masseuses)
     return (
-      <div style={{height:'500px'}}>
-      <GoogleMap
-        apiKey="AIzaSyAalkUAgB273NvUfsSKPpG4Wr47Q1YQNFg"//{YOUR_GOOGLE_MAP_API_KEY} // set if you need stats etc ...
-        center={this.props.center}
-        zoom={this.props.zoom}>
+      <div style={{height: '500px'}}>
+        <GoogleMap
+          apiKey="AIzaSyAalkUAgB273NvUfsSKPpG4Wr47Q1YQNFg"//{YOUR_GOOGLE_MAP_API_KEY} // set if you need stats etc ...
+          center={this.props.center}
+          zoom={this.props.zoom}>
 
 
-        {masseuses.map(
-           (m) => <MyGreatPlace lat={m.lat} lng={m.lon} text={m.name} key={m._id} />
+          {masseuses.map(
+            (m) => <MyGreatPlace lat={m.lat} lng={m.lon} text={m.name.split(/(\s+)/)[0]} key={m._id} stars={m.stars}/>
+          )}
 
-        )}
 
-
-      </GoogleMap>
+        </GoogleMap>
+        <MasseusModal/>
       </div>
     );
   }
