@@ -77,7 +77,7 @@ export default class SimpleMapComponent extends Component {
     return (
       <div style={{height:'500px'}}>
       <GoogleMap
-        // apiKey={YOUR_GOOGLE_MAP_API_KEY} // set if you need stats etc ...
+        apiKey="AIzaSyAalkUAgB273NvUfsSKPpG4Wr47Q1YQNFg"//{YOUR_GOOGLE_MAP_API_KEY} // set if you need stats etc ...
         center={this.props.center}
         zoom={this.props.zoom}>
 
