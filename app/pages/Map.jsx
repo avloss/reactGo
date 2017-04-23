@@ -5,8 +5,8 @@ import MapContainer from '../containers/Map';
 class About extends Component {
     getMetaData() {
         return {
-            title:  'About | reactGo',
-            meta: [{ name: 'description', content: 'A reactGo example of life' }],
+            title:  'Aroma - Thai Massage',
+            meta: [{ name: 'description', content: 'Find your perfect Thai Masseur!' }],
             link: []
         };
     }

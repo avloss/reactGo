@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import SimpleMapComponent from "../components/Map";
-
+import { openMasseuseModal } from '../actions/masseuseModal';
 /*
  * Note: This is kept as a container-level component,
  *  i.e. We should keep this as the container that does the data-fetching
@@ -12,32 +12,11 @@ import SimpleMapComponent from "../components/Map";
 class Map extends Component {
 
   render(){
-    const {masseuses}  = this.props;
-    return <SimpleMapComponent masseuses={masseuses}/>
+    const {masseuses, openMasseuseModal}  = this.props;
+    return <SimpleMapComponent masseuses={masseuses} openMasseuseModal={openMasseuseModal}/>
   }
 }
 
-
-
-// class Vote extends Component {
-//   render() {
-//     const {newTopic, topics, typing, createTopic, destroyTopic, incrementCount, decrementCount } = this.props;
-//     return (
-//       <div className={cx('vote')}>
-//         <EntryBox
-//           topic={newTopic}
-//           onEntryChange={typing}
-//           onEntrySave={createTopic} />
-//         <MainSection
-//           topics={topics}
-//           onIncrement={incrementCount}
-//           onDecrement={decrementCount}
-//           onDestroy={destroyTopic} />
-//         <Scoreboard topics={topics} />
-//       </div>
-//     );
-//   }
-// }
 
 Map.propTypes = {
   masseuses: PropTypes.array.isRequired,
@@ -49,4 +28,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Map);
+export default connect(mapStateToProps, {openMasseuseModal})(Map);

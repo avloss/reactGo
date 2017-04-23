@@ -9,7 +9,7 @@ import React, {PropTypes, Component} from 'react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import GoogleMap from 'google-map-react';
 
-import {MasseusModal} from './MasseusModal';
+import MasseuseModal from './MasseuseModal';
 
 const K_WIDTH = 40;
 const K_HEIGHT = 40;
@@ -35,17 +35,12 @@ const greatPlaceStyle = {
 };
 
 class MyGreatPlace extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  };
 
-  static defaultProps = {};
-
-  shouldComponentUpdate = shouldPureComponentUpdate;
+  //shouldComponentUpdate = shouldPureComponentUpdate;
 
   render() {
     return (
-      <div style={greatPlaceStyle}>
+      <div style={greatPlaceStyle} onClick={this.props.onClickFunc}>
         {this.props.text}
         <div style={{color: 'red', fontSize: 25}}> {"*".repeat(this.props.stars)}</div>
       </div>
@@ -72,8 +67,8 @@ export default class SimpleMapComponent extends Component {
   }
 
   render() {
-    const {masseuses} = this.props;
-    //console.log(masseuses)
+    const {masseuses, openMasseuseModal} = this.props;
+    //const XX = (x)=>console.log(x)
     return (
       <div style={{height: '500px'}}>
         <GoogleMap
@@ -82,13 +77,15 @@ export default class SimpleMapComponent extends Component {
           zoom={this.props.zoom}>
 
 
-          {masseuses.map(
-            (m) => <MyGreatPlace lat={m.lat} lng={m.lon} text={m.name.split(/(\s+)/)[0]} key={m._id} stars={m.stars}/>
+          {
+            masseuses.map(
+            (m) => <MyGreatPlace lat={m.lat} lng={m.lon} text={m.name.split(/(\s+)/)[0]} key={m._id} stars={m.stars}
+            onClickFunc = {()=>openMasseuseModal(m)}/>
           )}
 
 
         </GoogleMap>
-        <MasseusModal/>
+        <MasseuseModal />
       </div>
     );
   }
