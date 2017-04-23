@@ -44,7 +44,7 @@ class MasseuseModal extends Component {
         <br/>
         {
           (masseuse.style ? masseuse.style : []).map(
-            (m) => <div style={{float:"left", margin:"3px"}}>{m}<br/><img src={S3BUCKET + m + ".jpg"} style={{width:"100px"}}/></div>
+            (m) => <div style={{float:"left", margin:"3px"}}>{m}<br/><img src={S3BUCKET + m + ".jpg"} style={{width:"75px"}}/></div>
           )
         }
         <div style={{ display:"block", clear:"both", content:""}}></div>
