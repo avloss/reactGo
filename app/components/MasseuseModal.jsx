@@ -56,7 +56,7 @@ class MasseuseModal extends Component {
           Close
         </button>
         <button className='btn btn-primary'>
-          Save changes
+          BOOK NOW!
         </button>
       </ModalFooter>
     </Modal>

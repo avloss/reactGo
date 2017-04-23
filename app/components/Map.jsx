@@ -56,7 +56,7 @@ export default class SimpleMapComponent extends Component {
   };
 
   static defaultProps = {
-    center: [13.7381564, 100.560296],
+    center: [13.7281564, 100.560296],
     zoom: 14
   };
 
