@@ -18,7 +18,7 @@ class MasseuseModal extends Component {
   render(){
     const {masseuse, closeMasseuseModal}  = this.props;
     const S3BUCKET = "https://s3-ap-southeast-1.amazonaws.com/aroma.th/"
-
+    const GOOGLE_FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSd7DNXDFq2vodbvfxTCsjiInlmA5iw3yyq7JXOCjD9wMWcsCA/viewform?usp=pp_url&entry.1411167975&entry.785000008&entry.768650554&entry.1783299482="
     console.log(this.props)
 
 
@@ -41,7 +41,7 @@ class MasseuseModal extends Component {
 
         <img src={S3BUCKET + masseuse.picture} style={{width:"200px"}}/>
 
-        <h3>massage types:</h3>
+        <br/>
         {
           (masseuse.style ? masseuse.style : []).map(
             (m) => <div style={{float:"left", margin:"3px"}}>{m}<br/><img src={S3BUCKET + m + ".jpg"} style={{width:"100px"}}/></div>
@@ -49,15 +49,17 @@ class MasseuseModal extends Component {
         }
         <div style={{ display:"block", clear:"both", content:""}}>&nbsp;</div>
 
-
+        <h2>Price: 300&#x0e3f;</h2>
       </ModalBody>
       <ModalFooter>
         <button className='btn btn-default' onClick={closeMasseuseModal}>
           Close
         </button>
-        <button className='btn btn-primary'>
-          BOOK NOW!
-        </button>
+        <a href={GOOGLE_FORM_LINK+masseuse.name}>
+          <button className='btn btn-primary'>
+            BOOK NOW!
+          </button>
+        </a>
       </ModalFooter>
     </Modal>
   }
