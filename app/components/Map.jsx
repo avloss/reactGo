@@ -70,7 +70,7 @@ export default class SimpleMapComponent extends Component {
     const {masseuses, openMasseuseModal} = this.props;
     //const XX = (x)=>console.log(x)
     return (
-      <div style={{height: '500px'}}>
+      <div style={{height: '400px'}}>
         <GoogleMap
           apiKey="AIzaSyAalkUAgB273NvUfsSKPpG4Wr47Q1YQNFg"//{YOUR_GOOGLE_MAP_API_KEY} // set if you need stats etc ...
           center={this.props.center}
