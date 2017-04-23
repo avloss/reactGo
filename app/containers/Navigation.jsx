@@ -16,6 +16,7 @@ const Navigation = ({ user, logOut }) => {
           activeClassName={cx('active')}
           onlyActiveOnIndex>Aroma</Link>
         <Link to="/about" className={cx('item')} activeClassName={cx('active')}>About</Link>
+        <a href="https://goo.gl/forms/mr5z3jl6cXgTWWf22">Review Us!</a>
       </nav>
     );
 };
