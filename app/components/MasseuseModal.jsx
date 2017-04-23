@@ -38,7 +38,7 @@ class MasseuseModal extends Component {
       </ModalHeader>
       <ModalBody>
         <div>Phone: <a href={"tel:" + masseuse.number}>{masseuse.number}</a></div>
-
+        <div>Price: 300&#x0e3f;</div>
         <img src={S3BUCKET + masseuse.picture} style={{width:"200px"}}/>
 
         <br/>
@@ -47,9 +47,9 @@ class MasseuseModal extends Component {
             (m) => <div style={{float:"left", margin:"3px"}}>{m}<br/><img src={S3BUCKET + m + ".jpg"} style={{width:"100px"}}/></div>
           )
         }
-        <div style={{ display:"block", clear:"both", content:""}}>&nbsp;</div>
+        <div style={{ display:"block", clear:"both", content:""}}></div>
 
-        <h2>Price: 300&#x0e3f;</h2>
+
       </ModalBody>
       <ModalFooter>
         <button className='btn btn-default' onClick={closeMasseuseModal}>
